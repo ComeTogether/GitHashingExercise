@@ -1,0 +1,22 @@
+1. example_kill.c:
+The catcher function increments a counter (sigcount) each time it catches the SIGUSR1 signal. The sendsig function sends the SIGUSR1 signal a specified number of times, and the main function prints the results.
+
+
+2. example_pause.c:
+Sets up a signal handler (catcher) for the SIGALRM signal. It then uses the alarm function to set an alarm for a specified time (t). Before and after the pause function, it prints timestamps using the timestamp function, demonstrating how signals can be used for timed events in the program's execution flow.
+
+
+3. example_sleep.c
+Sets up a signal handler (sighandler) for the SIGINT signal (Ctrl+C). The main loop prints a message and sleeps for one second repeatedly. When a SIGINT signal is received, the program prints a message indicating the signal and exits gracefully.
+
+
+4. pipe_1.c
+It creates multiple child processes, and each child writes a message to the parent through a pipe. The parent reads messages from all children and prints them to the standard output. The program uses fork, pipe, and basic file I/O operations for communication between parent and child processes.
+
+
+5. pipe_2.c
+It creates a pipe and forks a child process. The parent writes a message to the pipe, and the child reads from the pipe and prints the message to the standard output. The communication between the parent and child processes is facilitated by the pipe.
+
+
+6. signal.c
+Sets an alarm to terminate a child process after a specified number of seconds. It forks a child process to execute a command given as a command-line argument. If the child process does not complete within the specified time, the program sends a SIGKILL signal to terminate it. The parent waits for the child to finish, and if the child is killed, it prints a message indicating that the child process was terminated.
